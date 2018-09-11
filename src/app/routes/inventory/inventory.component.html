@@ -1,0 +1,28 @@
+<nz-table #inventoryTable [nzData]="_inventoryModel">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>产品名称</th>
+      <th>单位</th>
+      <th>仓库位置</th>
+      <th>入库数量</th>
+      <th>出库数量</th>
+      <th>库存量</th>
+      <th>最后更新时间</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let itemInventory of inventoryTable.data">
+      <td>{{ itemInventory.id }}</td>
+      <td>{{ itemInventory.productName }}</td>
+      <td>{{ itemInventory.unit }}</td>
+      <td>{{ itemInventory.warehousePosition }}</td>
+      <td>{{ itemInventory.inboundAmount }}</td>
+      <td>{{ itemInventory.outboundAmount }}</td>
+      <td>{{ itemInventory.inventoryAmount }}</td>
+      <td>{{ itemInventory.lastUpdateTime }}</td>
+      <td>{{ itemInventory.remarik }}</td>
+    </tr>
+  </tbody>
+</nz-table>
