@@ -1,3 +1,49 @@
+<nz-card>
+  <div nz-row nzGutter="12">
+
+    <div nz-col nzSpan="6">
+      <nz-input-group nzAddOnBefore="产品名称">
+        <input nz-input [(ngModel)]="_searchModel.productName" />
+      </nz-input-group>
+    </div>
+
+    <div nz-col nzSpan="6">
+      <nz-input-group nzAddOnBefore="仓库位置">
+        <input nz-input [(ngModel)]="_searchModel.warehousePosition" />
+      </nz-input-group>
+    </div>
+
+    <div nz-col nzSpan="6">
+      <button nz-button nzType="primary" [nzLoading]="_isSerarch" (click)="clickSearch()"><i class="anticon anticon-search"></i>查询</button>
+    </div>
+
+  </div>
+
+  <div nz-row nzGutter="12" style="margin-top: 10px;">
+
+    <div nz-col nzSpan="6">
+      <nz-input-group nzAddOnBefore="入库数量" nzCompact>
+        <input type="text" nz-input placeholder="最小值" [(ngModel)]="_searchModel.minInboundAmount" style="width:45%; text-align: center;">
+        <input type="text" disabled nz-input placeholder="~" style="width: 10%; border-left: 0px; pointer-events: none; background-color: rgb(255, 255, 255);">
+        <input type="text" nz-input placeholder="最大值" [(ngModel)]="_searchModel.maxInboundAmount" style="width: 45%; text-align: center; border-left: 0px;">
+      </nz-input-group>
+    </div>
+
+    <div nz-col nzSpan="6">
+      <nz-input-group nzAddOnBefore="出库数量">
+        <input nz-input [(ngModel)]="_searchModel.outboundAmount" />
+      </nz-input-group>
+    </div>
+
+    <div nz-col nzSpan="6">
+      <nz-input-group nzAddOnBefore="库存量">
+        <input nz-input [(ngModel)]="_searchModel.inventoryAmount" />
+      </nz-input-group>
+    </div>
+
+  </div>
+</nz-card>
+
 <nz-table #inventoryTable [nzData]="_inventoryModel">
   <thead>
     <tr>

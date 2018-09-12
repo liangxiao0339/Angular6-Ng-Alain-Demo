@@ -28,8 +28,10 @@ export class StartupService {
   private viaHttp(resolve: any, reject: any) {
     this._siderbarMenuService.getSiderbarMenu().subscribe(
       result => {
-        console.log(result);
         this.menuService.add(result);
+      },
+      error => {
+        console.log(error);
       }
     );
     // this.aclService.setFull(true);
